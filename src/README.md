@@ -48,3 +48,24 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+## Switching to a persistent database (development)
+
+This project can use a SQLite database for local development. Steps:
+
+1. Install dependencies (if not already installed):
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Set the DATABASE_URL environment variable (optional). By default the app uses `sqlite:///./dev.db`.
+
+3. Start the app (it will create tables and seed sample activities on first run):
+
+```bash
+python src/app.py
+```
+
+4. (Optional) Use Alembic to create/manage migrations. The repo includes a minimal Alembic scaffold.
+
